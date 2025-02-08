@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="card">
+        <h1>Will you be my Valentine? ❤️</h1>
+        <div class="buttons">
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<script>
+    let noClicks = 0;
+        document.getElementById("noBtn").addEventListener("click", function() {
+            const messages = ["Are you sure? 😢", "You really sureeeee??? 😭"];
+            
+            if (noClicks < messages.length) {
+                document.getElementById("message").innerText = messages[noClicks];
+                noClicks++;
+            } else {
+                document.getElementById("message").innerText = "I'll keep asking until you say YES! 😤";
+            }
+        });
+
+        document.getElementById("yesBtn").addEventListener("click", function() {
+            document.querySelector(".card").innerHTML = "<h1>I love youu loveyy! ❤️😘</h1>";
+        });
+
+</script>
+</html>
